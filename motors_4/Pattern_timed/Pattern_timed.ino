@@ -37,12 +37,12 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  randomSeed(micros());
   switch (state) {
     case wait:
       // Case for starting the program
       if (digitalRead(start_button) == LOW) // If we want to create a new pattern
       {
+        randomSeed(micros());
         // Running a randomly generated pattern
         state = run_pattern;
         run_time = run_time / 2; //cut time in half
