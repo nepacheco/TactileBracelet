@@ -31,12 +31,13 @@ void setup() {
 }
 
 void loop() {
-  randomSeed(micros());
+  
   // put your main code here, to run repeatedly:
   switch (state) {
     case wait:
       // Case for starting the program
       if (digitalRead(start_button) == LOW) {
+        randomSeed(micros());
         // select a random motor
         state = run_motor;
         motor_temp = random(0,8);

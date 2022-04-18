@@ -11,7 +11,6 @@ enum states {wait, run_motor};
 states state = wait;
 
 void setup() {
-  randomSeed(micros());
   Serial.begin(9600);
   Serial.println("Beginning Setup");
 //  // Attaching Interrupt
@@ -31,10 +30,12 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  
   switch (state) {
     case wait:
       // Case for starting the program
       if (digitalRead(start_button) == LOW) {
+        randomSeed(micros());
         // select a random motor
         state = run_motor;
         motor_num = random(0,8);
