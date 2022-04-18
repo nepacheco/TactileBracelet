@@ -73,11 +73,12 @@ void loop() {
       break;
     case pause:
       if (digitalRead(timer_stop_pin) == LOW) {
+        end_time = micros(); // get time button was pressed
         // shut off the motor
         digitalWrite(motor_pins[motor_1], LOW);
         digitalWrite(motor_pins[motor_2], LOW);
 
-        end_time = micros(); // get time button was pressed
+       
         time_dur[num_tasks_c - num_tasks] = (end_time - start_time)/1000.0; // convert time to milliseconds
         num_tasks = num_tasks - 1; // change motor
         if (num_tasks == 0) // once we've done all 8 motors, reset the system and print the times
