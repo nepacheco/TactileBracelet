@@ -5,7 +5,7 @@ int start_button = 11;
 int run_time = 4000; // initial run time will actually be half this
 int const num_elems = 5;
 int motor_pattern[num_elems];
-int pattern_vault[3][num_elems] = {{0, 6, 4, 2, 6}, {4, 2, 6, 0, 4}, {6, 0, 4, 4, 2}};
+int pattern_vault[3][num_elems] = {{0, 6, 4, 2, 3}, {5, 2, 6, 1, 4}, {7, 1, 4, 5,3}};
 int motor_1 = 0;
 int motor_2 = 0;
 
